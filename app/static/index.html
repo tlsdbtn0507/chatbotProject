@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사주×PM 간단 테스트</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>사주×PM 간단 테스트</h1>
+      <section class="cards">
+        <article class="card">
+          <h2>사주→PM 해석</h2>
+          <form id="sajuForm" class="form">
+            <label>
+              생년월일
+              <div class="split-inputs">
+                <input
+                  id="birthDate"
+                  type="date"
+                  aria-label="생년월일(날짜)"
+                  required
+                />
+                <input id="birthTime" type="time" aria-label="출생시(시간)" />
+              </div>
+            </label>
+            <label>
+              출생지
+              <input
+                id="location"
+                type="text"
+                placeholder="예: 서울 강북구"
+                required
+              />
+            </label>
+            <label>
+              성별
+              <select id="gender">
+                <option value="M">M</option>
+                <option value="F">F</option>
+                <option value="N">N</option>
+              </select>
+            </label>
+            <button
+              id="sajuSubmit"
+              type="submit"
+              data-default-label="사주로 PM 적성 해석"
+            >
+              사주로 PM 적성 해석
+            </button>
+          </form>
+          <pre id="sajuOut" class="output" aria-live="polite"></pre>
+        </article>
+        <article class="card">
+          <h2>일반 챗 테스트</h2>
+          <div class="chat-box">
+            <textarea
+              id="chatInput"
+              rows="6"
+              placeholder="질문을 입력해 주세요."
+            ></textarea>
+            <button id="chatSubmit" data-default-label="보내기">보내기</button>
+          </div>
+          <pre id="chatOut" class="output" aria-live="polite"></pre>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="/static/app.js"></script>
+  </body>
+</html>

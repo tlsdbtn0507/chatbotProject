@@ -1,0 +1,168 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system,
+    sans-serif;
+  background-color: #f8f9fb;
+  color: #1f2933;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.cards {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #cbd5f0;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  color: black;
+  font-family: inherit;
+  background-color: #fefefe;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  /* outline: none; */
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+button {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(79, 70, 229, 0.25);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.output {
+  background-color: #f4f6fb;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 120px;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  border: 1px solid #dbe2f5;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 날짜/시간 입력이 네이티브 캘린더 아이콘과 텍스트가 잘 보이도록 보정 */
+input[type="date"],
+input[type="time"] {
+  appearance: auto;
+  -webkit-appearance: auto;
+  padding: 0.6rem 0.8rem;
+  padding-right: 2.2rem; /* 아이콘을 가리지 않도록 여유 */
+  color: #0f172a; /* 확실한 텍스트 색 */
+  background-color: #ffffff; /* 입력 배경을 흰색으로 고정 */
+  border-radius: 10px;
+  border: 1px solid #cbd5f0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: inline-block;
+  cursor: pointer;
+  opacity: 1;
+  filter: none;
+  margin-left: 4px;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+/* 플레이스홀더 색상 명시: 배경과 대비되게 */
+input::placeholder,
+input[type="date"]::placeholder,
+input[type="time"]::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+/* 날짜/시간 입력을 가로로 나란히 배치 */
+.split-inputs {
+  display: flex;
+  gap: 0.5rem;
+}
+.split-inputs input {
+  flex: 1 1 0;
+}
