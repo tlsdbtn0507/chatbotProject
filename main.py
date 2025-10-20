@@ -143,8 +143,8 @@ async def saju_pm(payload: SajuPMRequest) -> dict:
     reply = completion.choices[0].message.content.strip()
 
     # 후처리: 모델이 마지막 문장을 누락하거나 변경한 경우 강제 추가하여
-    # 항상 '사주는 재미 요소입니다.'로 끝나도록 보장합니다.
-    disclaimer = "사주는 재미 요소입니다."
+    # 항상 '나의 PM적합도에 참고해보세요.'로 끝나도록 보장합니다.
+    disclaimer = "나의 PM적합도에 참고해보세요."
     if not reply.endswith(disclaimer):
         # 이미 문장들이 있을 경우 줄바꿈 후 추가, 빈 응답이면 디스클레이머만 반환
         if reply:
